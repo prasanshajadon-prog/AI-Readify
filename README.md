@@ -40,7 +40,7 @@ That's it. No accounts to create inside the app, no complicated steps.
 ### 1. Clone or download this repo
 
 ```bash
-git clone https://github.com/prathamtagad/Readify-AI.git
+git clone https://github.com/Prashray21/Readify-AI.git
 cd Readify-AI
 ```
 
@@ -145,4 +145,4 @@ This project doesn't currently ship with a license file. If you're planning to s
 
 ---
 
-Built by **Pratham Tagad** — [GitHub](https://github.com/prathamtagad) · [Portfolio](https://prathamtagad.netlify.app) · [prathamtagad0@gmail.com](mailto:prathamtagad0@gmail.com)
+Built by **Prashray Sharma** — [GitHub](https://github.com/Prashray21) · [Portfolio](https://prashraysharma.netlify.app/) · [prashraysharma805@gmail.com](mailto:prashraysharma805@gmail.com)
