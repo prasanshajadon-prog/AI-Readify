@@ -26,8 +26,8 @@ SPEECH_KEY = os.getenv("SPEECH_KEY")
 SPEECH_REGION = os.getenv("SPEECH_REGION", "eastus")
 
 st.set_page_config(
-    page_title="Readify AI",
-    page_icon="🎙️",
+    page_title="Readify AI — Prashray",
+    page_icon="🎧",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -134,6 +134,7 @@ def clear_results():
 st.markdown(
     """
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
     /* Hide Streamlit chrome */
     header {visibility: hidden;}
     [data-testid="stHeader"] {display: none;}
@@ -178,13 +179,14 @@ st.markdown(
 
     <style>
 
-    /* App background */
+    /* App background and font */
     .stApp {
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
         background:
-            radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.18), transparent 25%),
-            radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.16), transparent 22%),
-            linear-gradient(180deg, #050816 0%, #07111f 45%, #040711 100%);
-        color: #e5eefb;
+            radial-gradient(circle at 15% 10%, rgba(16, 185, 129, 0.10), transparent 25%),
+            radial-gradient(circle at 85% 15%, rgba(14, 165, 233, 0.10), transparent 22%),
+            linear-gradient(180deg, #071422 0%, #051726 45%, #031018 100%);
+        color: #e6f3f7;
     }
 
     .block-container {
@@ -200,9 +202,9 @@ st.markdown(
         gap: 0.5rem;
         padding: 0.42rem 0.8rem;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        color: #cbd5e1;
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.16);
+        color: #d1fbf0;
         font-size: 0.84rem;
         font-weight: 600;
         margin-bottom: 0.65rem;
@@ -210,18 +212,125 @@ st.markdown(
     }
 
     .hero-title {
-        font-size: 2.15rem;
+        font-size: 2.3rem;
         line-height: 1.05;
         font-weight: 800;
         letter-spacing: -0.04em;
         margin: 0.05rem 0 0.4rem 0;
-        color: #f8fbff;
+        color: #f0fcff;
     }
 
     .hero-subtitle {
         font-size: 0.98rem;
         color: #94a3b8;
         margin-bottom: 0.85rem;
+    }
+
+    .hero-shell {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        margin-bottom: 1rem;
+        padding: 1.25rem 1.2rem;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(16px);
+    }
+
+    .hero-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .hero-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.45rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        background: rgba(255, 255, 255, 0.05);
+        color: #d9eff4;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .workflow-grid {
+        display: grid;
+        grid-template-columns: 1.06fr 1.3fr 0.78fr;
+        gap: 0.9rem;
+        align-items: stretch;
+        margin-bottom: 1rem;
+    }
+
+    .panel-card {
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 1rem;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(14px);
+    }
+
+    .panel-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .panel-kicker {
+        color: #8cd7d8;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+    }
+
+    .panel-title {
+        font-size: 1rem;
+        font-weight: 800;
+        color: #f4fbff;
+        margin-top: 0.2rem;
+    }
+
+    .panel-desc {
+        color: #94a3b8;
+        font-size: 0.86rem;
+        line-height: 1.45;
+        margin-top: 0.2rem;
+    }
+
+    .stat-stack {
+        display: grid;
+        gap: 0.7rem;
+    }
+
+    .metric-card {
+        padding: 0.9rem 0.95rem;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metric-label {
+        color: #93a9b8;
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .metric-value {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #f8fdff;
+        letter-spacing: -0.03em;
     }
 
     .mini-note {
@@ -289,8 +398,8 @@ st.markdown(
         padding: 0.78rem 1rem;
         font-weight: 700;
         color: white;
-        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-        box-shadow: 0 12px 30px rgba(99, 102, 241, 0.25);
+        background: linear-gradient(135deg, #06b6d4 0%, #06b6a4 50%, #10b981 100%);
+        box-shadow: 0 12px 30px rgba(6, 182, 180, 0.18);
         transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
     }
 
@@ -328,9 +437,33 @@ st.markdown(
         color: #dbe7f5 !important;
     }
 
+    [data-testid="stFileUploader"] section {
+        border-radius: 16px;
+    }
+
     /* Preview image */
     img {
-        border-radius: 16px !important;
+        border-radius: 12px !important;
+        max-height: 480px;
+    }
+
+    .preview-frame {
+        min-height: 360px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+    }
+
+    .preview-placeholder {
+        max-width: 320px;
+        text-align: center;
+        color: #90a7b4;
+        line-height: 1.5;
     }
 
     /* Code / output */
@@ -371,7 +504,7 @@ st.markdown(
 
     /* Footer */
     .site-footer {
-        margin-top: 3rem;
+        margin-top: 2rem;
         padding: 1.5rem 0 1.2rem 0;
         border-top: 1px solid rgba(255, 255, 255, 0.07);
         text-align: center;
@@ -425,10 +558,19 @@ st.markdown(
 # HEADER
 # =========================================================
 
-st.markdown("<div class='hero-badge'>🧠 Azure OCR · 🎙️ Text to Speech</div>", unsafe_allow_html=True)
-st.markdown("<div class='hero-title'>Readify AI</div>", unsafe_allow_html=True)
 st.markdown(
-    "<div class='hero-subtitle'>Upload an image, extract the text, and turn it into clean speech with a polished one-screen workflow.</div>",
+    """
+    <div class='hero-shell'>
+        <div class='hero-row'>
+            <div class='hero-badge'>🔍 OCR · 🔊 Speech</div>
+            <div class='hero-chip'>Fast extraction</div>
+            <div class='hero-chip'>Natural voice output</div>
+            <div class='hero-chip'>Prashray Sharma</div>
+        </div>
+        <div class='hero-title'>Readify AI</div>
+        <div class='hero-subtitle'>Turn an image into readable text and spoken audio inside a cleaner, dashboard-style workflow.</div>
+    </div>
+    """,
     unsafe_allow_html=True,
 )
 
@@ -442,11 +584,22 @@ if not has_azure_creds():
 # TOP LAYOUT
 # =========================================================
 
-left, right = st.columns([1.02, 1], gap="large")
+workflow_left, workflow_center, workflow_right = st.columns([1.05, 1.3, 0.72], gap="large")
 
-with left:
-    # st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
-    st.markdown("<div class='section-title'>1. Upload</div>", unsafe_allow_html=True)
+with workflow_left:
+    st.markdown(
+        """
+        <div class='panel-card'>
+            <div class='panel-head'>
+                <div>
+                    <div class='panel-kicker'>Step 1</div>
+                    <div class='panel-title'>Upload file</div>
+                </div>
+            </div>
+            <div class='panel-desc'>Drop in an image with clear text. The app reads it with Azure OCR and prepares the speech output in one flow.</div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     uploaded = st.file_uploader(
         "Upload image",
@@ -455,12 +608,7 @@ with left:
         help="Best results come from clear, high-contrast images.",
     )
 
-    btn_col_1, btn_col_2 = st.columns([1, 0.15], gap="small")
-    with btn_col_1:
-        run = st.button("✨ Extract Text & Generate Speech")
-
-    with btn_col_2:
-        st.markdown("", unsafe_allow_html=True)
+    run = st.button("🎯 Convert Image to Speech")
 
     if uploaded:
         file_label = f"{uploaded.name} · {round(len(uploaded.getvalue()) / 1024, 1)} KB"
@@ -470,35 +618,91 @@ with left:
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-with right:
-    # st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
-    st.markdown("<div class='section-title'>2. Preview</div>", unsafe_allow_html=True)
+with workflow_center:
+    st.markdown(
+        """
+        <div class='panel-card'>
+            <div class='panel-head'>
+                <div>
+                    <div class='panel-kicker'>Step 2</div>
+                    <div class='panel-title'>Live preview</div>
+                </div>
+            </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     if uploaded:
         st.image(uploaded, width='stretch')
     else:
         st.markdown(
             """
-            <div style="
-                min-height: 250px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                border-radius:16px;
-                border:1px dashed rgba(255,255,255,0.14);
-                background: rgba(255,255,255,0.03);
-                color:#94a3b8;
-                font-size:0.95rem;
-                text-align:center;
-                padding:1rem;
-            ">
-                Your image preview will appear here.
+            <div class='preview-frame'>
+                <div class='preview-placeholder'>
+                    <div style='font-size: 1.05rem; font-weight: 700; color: #dceef4; margin-bottom: 0.35rem;'>Preview waiting</div>
+                    <div>Your uploaded image will appear here with a larger, center-focused preview area.</div>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    if uploaded:
+        st.markdown(
+            """
+            <div class='stat-row'>
+                <div class='stat-box'>
+                    <div class='stat-label'>Format</div>
+                    <div class='stat-value'>Image</div>
+                </div>
+                <div class='stat-box'>
+                    <div class='stat-label'>Focus</div>
+                    <div class='stat-value'>Text</div>
+                </div>
+                <div class='stat-box'>
+                    <div class='stat-label'>Ready</div>
+                    <div class='stat-value'>Yes</div>
+                </div>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
     st.markdown("</div>", unsafe_allow_html=True)
+
+with workflow_right:
+    st.markdown(
+        """
+        <div class='panel-card'>
+            <div class='panel-head'>
+                <div>
+                    <div class='panel-kicker'>Step 3</div>
+                    <div class='panel-title'>Quick guide</div>
+                </div>
+            </div>
+            <div class='panel-desc'>
+                1. Upload a crisp image.<br>
+                2. Run extraction and speech generation.<br>
+                3. Review the transcript and download audio.
+            </div>
+            <div class='stat-stack' style='margin-top: 0.9rem;'>
+                <div class='metric-card'>
+                    <div class='metric-label'>Workflow</div>
+                    <div class='metric-value'>Image → Text → Audio</div>
+                </div>
+                <div class='metric-card'>
+                    <div class='metric-label'>Theme</div>
+                    <div class='metric-value'>Clean dashboard</div>
+                </div>
+                <div class='metric-card'>
+                    <div class='metric-label'>Voice</div>
+                    <div class='metric-value'>Azure Speech</div>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 # =========================================================
@@ -544,15 +748,16 @@ if uploaded and st.session_state["last_file_name"] != uploaded.name:
 
 if st.session_state["extracted_text"] or st.session_state["audio_bytes"]:
     st.markdown("<div style='height:0.35rem'></div>", unsafe_allow_html=True)
-    st.markdown("<div class='section-title'>3. Result</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-title'>3. Results</div>", unsafe_allow_html=True)
 
-    result_left, result_right = st.columns([1.25, 1], gap="large")
+    result_text, result_audio = st.tabs(["Transcript", "Speech player"])
 
-    with result_left:
-        # st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
+    text_value = st.session_state["extracted_text"].strip()
+
+    with result_text:
+        st.markdown("<div class='panel-card'>", unsafe_allow_html=True)
         st.markdown("### 📝 Extracted Text", unsafe_allow_html=True)
 
-        text_value = st.session_state["extracted_text"].strip()
         if text_value:
             pretty_text = html.escape(text_value).replace("\n", "<br>")
             st.markdown(
@@ -590,14 +795,14 @@ if st.session_state["extracted_text"] or st.session_state["audio_bytes"]:
 
         st.markdown("</div>", unsafe_allow_html=True)
 
-    with result_right:
-        # st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
+    with result_audio:
+        st.markdown("<div class='panel-card'>", unsafe_allow_html=True)
         st.markdown("### 🔊 Audio Output", unsafe_allow_html=True)
 
         if st.session_state["audio_bytes"]:
             st.audio(st.session_state["audio_bytes"], format="audio/wav", autoplay=True)
             st.download_button(
-                "⬇ Download Audio",
+                "⬇ Download Speech",
                 data=st.session_state["audio_bytes"],
                 file_name=f"{safe_filename(st.session_state['last_file_name'])}.wav",
                 mime="audio/wav",
@@ -616,15 +821,15 @@ if st.session_state["extracted_text"] or st.session_state["audio_bytes"]:
 st.markdown(
     """
     <div class="site-footer">
-        <div class="footer-name">Built by Pratham Tagad</div>
+        <div class="footer-name">Built by Prashray Sharma</div>
         <div class="footer-links">
-            <a href="https://github.com/prathamtagad" target="_blank">GitHub</a>
+            <a href="https://github.com/prashray21" target="_blank">GitHub</a>
             <span class="footer-divider">·</span>
-            <a href="https://prathamtagad.netlify.app" target="_blank">Portfolio</a>
+            <a href="https://prashraysharma.netlify.app" target="_blank">Portfolio</a>
             <span class="footer-divider">·</span>
-            <a href="mailto:prathamtagad0@gmail.com">prathamtagad0@gmail.com</a>
+            <a href="mailto:prashraysharma805@gmail.com">prashraysharma805@gmail.com</a>
         </div>
-        <div class="footer-copy">© 2026 Pratham Tagad</div>
+        <div class="footer-copy">© 2026 Prashray Sharma</div>
     </div>
     """,
     unsafe_allow_html=True,
